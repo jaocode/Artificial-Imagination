@@ -12,7 +12,6 @@ output_path = './output'
 def init_openai():
     # API_KEY is associated with your account and should be kept secret
     with open('./openai.key', 'r') as k:
-        print ('here')
         key = k.readline()
         openai.api_key = key
         k.close
@@ -20,9 +19,10 @@ def init_openai():
 # Queries openai DALL-E to generate a picture for the given prompt.
 def query_DALLE(prompt):
     response = openai.Image.create(
+        model="dall-e-3",
         prompt=prompt,
         n=1,
-        size="512x512"
+        size="1024x1024"
         )
     image_url = response['data'][0]['url']
 
@@ -34,11 +34,11 @@ def query_GPT3 ():
     restart_sequence = "\nPrompt: "
     
     #The GPT-3 davinci-003 differs from davinci-002 by providing much more elaborate descriptions that
-    #are two big for use as prompts for image generators. 
+    #are too big for use as prompts for image generators. 
     prompt = "Prompt: Imagine a picture and give a two sentence description of it."
 
     response = openai.Completion.create(
-        model="text-davinci-003",
+        model="gpt-3.5-turbo-instruct",
         prompt=prompt,
         temperature=0.9,
         max_tokens=150,

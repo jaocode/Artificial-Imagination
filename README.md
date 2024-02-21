@@ -1,6 +1,6 @@
 # Artificial-Imagination
 
-A simple Python script that generates pictures from nothing by combining OpenAI's GPT-3 text completion model with their DALL-E text to image model. It automates the concept described here (https://okunariumlabs.com/f/ai-now-stands-for-artificial-imagination).
+A simple Python script that generates pictures from nothing by combining OpenAI's ChatGPT text completion model with their DALL-E-3 text to image model. It automates the concept described here (https://okunariumlabs.com/f/ai-now-stands-for-artificial-imagination).
 
 ## Instructions
 
